@@ -1,0 +1,63 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    repositories {
+        google()
+        jcenter()
+        
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath 'com.google.gms:google-services:4.2.0'
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+    }
+
+    // Constants defined for all modules, to avoid typing mistakes
+// We use it for communication using the Wear API
+// It is a key-value mapping, auto-prefixed with ”W_” for convenience
+    project.ext {
+        constants = [
+                path_start_activity : "/START_ACTIVITY",
+                path_stop_activity  : "/STOP_ACTIVITY",
+                path_acknowledge    : "/ACKNOWLEDGE",
+
+                example_path_asset  : "/ ASSET ",
+                example_path_text   : "/TEXT",
+                example_path_datamap: "/DATAMAP",
+
+                mainactivity        : "MainActivity",
+                recordingactivity   : "RecordingActivity",
+
+                path_example_message: "/EXAMPLE_PATH_MESSAGE",
+                path_example_datamap: "/EXAMPLE_PATH_DATAMAP",
+
+                path_message_main: "/MESSAGE_MAIN",
+                path_message_loading: "/MESSAGE_LOADING",
+                path_message_gamechoose: "/MESSAGE_GAMECHOOSE",
+                path_data_gamechoose: "/DATA_GAMECHOOSE",
+                path_message_highscore: "/MESSAGE_HIGHSCORE",
+                path_message_gameresult: "/MESSAGE_GAMERESULT",
+                path_message_selectoption: "/MESSAGE_SELECTOPTION",
+                path_message_game4: "MESSAGE_GAME4",
+                path_message_game4_changeimage: "MESSAGE_GAME4_CHANGEIMAGE",
+                path_message_game4_react: "MESSAGE_GAME4_REACT",
+                path_message_game4_result: "MESSAGE_GAME4_RESULT",
+                path_message_game4_resultclose: "MESSAGE_GAME4_RESULTCLOSE",
+
+
+                datamap_example_image: "EXAMPLE_IMAGE_NAME_IN_DATAMAP",
+        ]
+    }
+}
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
